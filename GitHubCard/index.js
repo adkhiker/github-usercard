@@ -13,10 +13,10 @@ axios
     const user = data.data;
     const container = document.querySelector(".cards");
     container.appendChild(gitHubCard(user));
-    console.log("Success", data.data);
+    console.log("API Data", data.data);
   })
   .catch(error => {
-    console.log("Error", error);
+    console.log("API Error", error);
   });
 
 /* Step 2: Inspect and study the data coming back, this is YOUR 
@@ -47,6 +47,22 @@ const followersArray = [
   "https://api.github.com/users/lisaMTayl",
   "https://api.github.com/users/BNMoyers"
 ];
+
+followersArray.forEach(follower => {
+  axios
+    .get(follower)
+    .then(data => {
+      const user = data.data;
+      const container = document.querySelector(".cards");
+      container.appendChild(gitHubCard(user));
+      console.log("API Data", data.data);
+    })
+    .catch(error => {
+      console.log("API Error", error);
+    });
+});
+
+
 
 /* Step 3: Create a function that accepts a single object as its only argument,
           Using DOM methods and properties, create a component that will return the following DOM element:
