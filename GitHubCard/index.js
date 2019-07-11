@@ -2,12 +2,11 @@
            (replacing the palceholder with your Github name):
            https://api.github.com/users/<your name>
 */
-// axios.get('https://api.github.com/users/adkhiker');
-
-// const axios = require("axios");
-
 
 // Make a request for a user with a given ID
+
+// axios.get('https://api.github.com/users/adkhiker');
+
 axios
   .get("https://api.github.com/users/adkhiker")
   .then(data => {
@@ -83,7 +82,6 @@ followersArray.forEach(follower => {
 */
 
 function gitHubCard(user) {
-  
   const card = document.createElement("div");
   const userImg = document.createElement("img");
   const userInfo = document.createElement("div");
@@ -120,15 +118,12 @@ function gitHubCard(user) {
   userInfo.appendChild(userFollowers);
   userInfo.appendChild(userFollowing);
   userInfo.appendChild(userBio);
- 
+
   card.appendChild(userImg);
   card.appendChild(userInfo);
 
   return card;
 }
-
-
-
 
 /* List of LS Instructors Github username's: 
   tetondan
