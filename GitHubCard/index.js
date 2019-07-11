@@ -2,7 +2,6 @@
            (replacing the palceholder with your Github name):
            https://api.github.com/users/<your name>
 */
-
 // Make a request for a user with a given ID
 
 // axios.get('https://api.github.com/users/adkhiker');
