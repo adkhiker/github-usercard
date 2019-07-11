@@ -2,6 +2,21 @@
            (replacing the palceholder with your Github name):
            https://api.github.com/users/<your name>
 */
+// axios.get('https://api.github.com/users/adkhiker');
+
+// const axios = require("axios");
+
+// Make a request for a user with a given ID
+axios
+  .get("https://api.github.com/users/adkhiker")
+  .then(response => {
+    console.log(response);
+    // deal with the response data in here
+  })
+  .catch(err => {
+    console.log(error);
+    // deal with the error in here
+  });
 
 /* Step 2: Inspect and study the data coming back, this is YOUR 
    github info! You will need to understand the structure of this 
