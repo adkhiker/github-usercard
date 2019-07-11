@@ -9,13 +9,14 @@
 // Make a request for a user with a given ID
 axios
   .get("https://api.github.com/users/adkhiker")
-  .then(response => {
-    console.log(response);
-    // deal with the response data in here
+  .then(data => {
+    const user = data.data;
+    const container = document.querySelector(".cards");
+    container.appendChild(gitHubCard(user));
+    console.log("Success", data.data);
   })
-  .catch(err => {
-    console.log(error);
-    // deal with the error in here
+  .catch(error => {
+    console.log("Error", error);
   });
 
 /* Step 2: Inspect and study the data coming back, this is YOUR 
@@ -39,7 +40,7 @@ axios
           user, and adding that card to the DOM.
 */
 
- const followersArray = [
+const followersArray = [
   "https://api.github.com/users/fskeen",
   "https://api.github.com/users/ehalsmer",
   "https://api.github.com/users/DeejayEaster",
